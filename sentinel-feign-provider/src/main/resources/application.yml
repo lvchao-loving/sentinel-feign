@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: sentine_feign_provider  # 设置应用的名称
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:9000  # 设置sentinel链接控制台的主机地址和端口
+    nacos:
+      discovery:
+        ip: localhost:8848
