@@ -3,11 +3,12 @@ server:
 
 spring:
   application:
-    name: sentine_feign_consumer  # 设置应用的名称
+    name: sentinel-feign-consumer  # 设置应用的名称
   cloud:
     sentinel:
       transport:
         dashboard: localhost:9000  # 设置sentinel链接控制台的主机地址和端口
     nacos:
       discovery:
-        ip: localhost:8848
+        ip: localhost
+    #server-addr: localhost:8848  # 注意 ip 和 server-addr的区别

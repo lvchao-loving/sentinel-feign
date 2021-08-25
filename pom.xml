@@ -2,28 +2,51 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.9</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+    <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lvchao.sentinel</groupId>
     <artifactId>sentinel-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+
     <modules>
         <module>sentinel-feign-provider</module>
         <module>sentinel-feign-consumer</module>
     </modules>
+
     <packaging>pom</packaging>
-    <modelVersion>4.0.0</modelVersion>
+    <name>sentinel-parent</name>
     <description>study sentinel code</description>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from dao -->
+    </parent>
+
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+        <jpa.version>1.0</jpa.version>
+        <jackson.version>2.11.0</jackson.version>
+        <spring.amqp.version>2.1.0.M4</spring.amqp.version>
+        <redis.version>2.1.0.M4</redis.version>
+        <javax.servlet.version>3.1.0</javax.servlet.version>
+        <jwt.version>0.9.1</jwt.version>
+        <lombok.version>1.16.16</lombok.version>
+        <swagger.version>2.9.2</swagger.version>
+        <mybatis.version>3.3.2</mybatis.version>
+        <druid.version>1.1.10</druid.version>
+        <mysql.version>6.0.6</mysql.version>
+        <spring.config.version>2.0.0.RELEASE</spring.config.version>
+        <spring-cloud-gateway.version>2.2.0.M2</spring-cloud-gateway.version>
+        <admin-server.version>2.1.6</admin-server.version>
+        <jBCrypt.version>0.4.1</jBCrypt.version>
+        <fastJson.version>1.2.70</fastJson.version>
+        <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <sentinel.verion>1.7.1</sentinel.verion>
     </properties>
 
     <dependencyManagement>
@@ -32,25 +55,28 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR11</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
-                <scope>runtime</scope>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <!-- 引入公共依赖 -->
     <dependencies>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <version>2021.1</version>
         </dependency>
-
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>2021.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
