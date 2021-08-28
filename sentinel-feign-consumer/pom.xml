@@ -17,15 +17,6 @@
     </properties>
 
     <dependencies>
-        <!-- sentinel和springcloud整合 -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.lvchao.sentinel</groupId>
             <artifactId>sentinel-feign-provider</artifactId>
