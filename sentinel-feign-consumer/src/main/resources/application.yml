@@ -8,10 +8,7 @@ spring:
     sentinel:
       transport:
         dashboard: localhost:9000  # 设置sentinel链接控制台的主机地址和端口
-        port: 9000
     nacos:
-      config:
-        server-addr: localhost:9000
       discovery:
       # ip: localhost
         server-addr: localhost:8848  # 注意 ip 和 server-addr的区别
